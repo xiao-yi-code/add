@@ -1,0 +1,21 @@
+int main()
+{
+	char str[80];
+	void fun(char *s);
+	printf("\nEnter a string:");
+	gets(str);
+    printf("\nThe string is:%s\n",str);
+	fun(str);
+	printf("\nThe string of changing is:%s\n",str);
+	return 0;
+}
+
+void fun(char *s)
+{
+    int i,j;
+	for(i=0,j=0;s[i]!='\0';i++)
+		if(s[i]>='0'&&s[i]<='9') 
+			s[j++] = s[j];      
+	                            
+	   s[j] = '\0';
+}
