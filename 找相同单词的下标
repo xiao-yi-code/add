@@ -1,0 +1,35 @@
+# add
+1
+#define N 8
+#define M 8
+int main()
+{
+	char ch[N][M] = {"if","while","why","for","int","good","swith","the"};
+	char t[M];
+	int n,i;
+	int fun (char (*s)[M], char *t);
+	printf("\nThe original string :\n");
+	for(i=0;i<N;i++)
+		puts(ch[i]);
+	printf("\n");
+	printf("Enter a string for search:");
+	gets(t);
+	n = fun(ch,t);
+	if(n==-1)
+		printf("\nDon't found!");
+	else
+		printf("\n返回这个字符所在的下标位置：%d\n",n);
+
+   return 0;
+}
+int fun (char (*s)[M], char *t)
+{
+    int i,k;
+	for(i=0;i<N;i++)
+	{
+		k = strcmp(s[i],t);//比较两个字符是否相等的函数
+		if(k==0)
+			return i;
+	}
+			return -1;
+}
